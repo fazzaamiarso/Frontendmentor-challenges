@@ -1,0 +1,9 @@
+
+form {
+    margin-inline: auto;
+    max-width: 20rem;
+}
+
+form button {
+    width: 100%;
+}
