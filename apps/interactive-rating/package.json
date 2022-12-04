@@ -7,9 +7,11 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint"
+    "lint": "tsc && eslint --fix",
+    "clean": "rm -rf node_modules dist .turbo"
   },
   "devDependencies": {
+    "eslint-config-custom": "workspace:*",
     "typescript": "^4.6.4",
     "vite": "^3.2.3"
   }
