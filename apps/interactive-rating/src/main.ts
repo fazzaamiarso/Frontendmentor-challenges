@@ -19,7 +19,7 @@ form.addEventListener("submit", (e) => {
     "rating-text"
   ) as HTMLElement;
 
-  selectedRatingText.ariaLabel = `You selected ${selectedRatingEl.innerText} of 5`;
+  selectedRatingText.ariaLabel = `You selected ${selectedRatingEl.innerText} out of 5`;
   selectedRatingText.focus();
 });
 
