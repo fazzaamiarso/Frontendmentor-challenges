@@ -6,45 +6,73 @@
     <title>Frontend Mentor | Interactive rating component</title>
     <link rel="stylesheet" href="src/styles/normalize.css" />
     <link rel="stylesheet" href="src/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap"
+      rel="stylesheet" />
   </head>
   <body>
-    <main id="rate-page">
-      <form>
-        <p>
-          How did we do? Please let us know how we did with your support
-          request.
-        </p>
-        <fieldset style="display: flex; gap: 1rem">
-          <legend>
-            All feedback is appreciated to help us improve our offering!
-          </legend>
-          <label>
-            <input type="radio" name="rating" id="rating" value="1" checked />
-            1
-          </label>
-          <label>
-            <input type="radio" name="rating" id="rating" value="2" />
-            2
-          </label>
-          <label>
-            <input type="radio" name="rating" id="rating" value="3" />
-            3
-          </label>
-          <label>
-            <input type="radio" name="rating" id="rating" value="4" />
-            4
-          </label>
-          <label>
-            <input type="radio" name="rating" id="rating" value="5" />
-            5
-          </label>
-        </fieldset>
-        <button>Submit</button>
-      </form>
+    <main id="rate-page" class="active">
+      <div class="card">
+        <div class="star-icon">
+          <img src="src/images/icon-star.svg" alt="" />
+        </div>
+        <div>
+          <h1>How did we do?</h1>
+          <p>
+            Please let us know how we did with your support request. All
+            feedback is appreciated to help us improve our offering!
+          </p>
+        </div>
+        <form>
+          <fieldset style="display: flex; gap: 1rem">
+            <legend class="sr-only">Select Rating</legend>
+            <div class="rating-container">
+              <div>
+                <input
+                  type="radio"
+                  name="rating"
+                  id="rating-1"
+                  value="1"
+                  checked />
+                <label for="rating-1">1</label>
+              </div>
+              <div>
+                <input type="radio" name="rating" id="rating-2" value="2" />
+                <label for="rating-2">2</label>
+              </div>
+              <div>
+                <input type="radio" name="rating" id="rating-3" value="3" />
+                <label for="rating-3">3</label>
+              </div>
+              <div>
+                <input type="radio" name="rating" id="rating-4" value="4" />
+                <label for="rating-4">4</label>
+              </div>
+              <div>
+                <input type="radio" name="rating" id="rating-5" value="5" />
+                <label for="rating-5">5</label>
+              </div>
+            </div>
+          </fieldset>
+          <button>Submit</button>
+        </form>
+      </div>
     </main>
-    <main id="thank-page" style="display:none;">
-      <div>
-        <p>You selected <span id="selected-rating"></span> out of 5</p>
+    <main id="thank-page">
+      <div class="card">
+        <img src="src/images/illustration-thank-you.svg" alt="" />
+        <p id="rating-text" tabindex="-1">
+          You selected
+          <span id="selected-rating"></span>
+          out of 5
+        </p>
+        <h1>Thank you!</h1>
+        <p>
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don't hesitate to get in touch!
+        </p>
       </div>
     </main>
     <script type="module" src="/src/main.ts"></script>

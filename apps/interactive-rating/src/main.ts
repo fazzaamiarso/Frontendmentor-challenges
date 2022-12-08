@@ -13,8 +13,14 @@ form.addEventListener("submit", (e) => {
   const formData = new FormData(e.currentTarget);
   selectedRatingEl.innerText = formData.get("rating") as string;
 
-  mainPage.style.display = "none";
-  thankPage.style.display = "block";
+  mainPage.classList.remove("active");
+  thankPage.classList.add("active");
+  const selectedRatingText = document.getElementById(
+    "rating-text"
+  ) as HTMLElement;
+
+  selectedRatingText.ariaLabel = `You selected ${selectedRatingEl.innerText} of 5`;
+  selectedRatingText.focus();
 });
 
 export {};
