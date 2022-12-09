@@ -13,8 +13,8 @@
       rel="stylesheet" />
   </head>
   <body>
-    <main id="rate-page" class="active">
-      <div class="card">
+    <main>
+      <div id="rate" class="card active">
         <div class="star-icon">
           <img src="src/images/icon-star.svg" alt="" />
         </div>
@@ -59,13 +59,13 @@
           <button>Submit</button>
         </form>
       </div>
-    </main>
-    <main id="thank-page">
-      <div class="card">
+
+      <div id="rating-status" role="status" aria-live="assertive" class="sr-only"></div>
+      <div id="thank" class="card">
         <img src="src/images/illustration-thank-you.svg" alt="" />
-        <p id="rating-text" data-testid="rating-text" tabindex="-1">
+        <p id="rating-text" data-testid="rating-text" role="text">
           You selected
-          <span id="selected-rating"></span>
+          <span id="selected-rating" role="presentation"></span>
           out of 5
         </p>
         <h1>Thank you!</h1>

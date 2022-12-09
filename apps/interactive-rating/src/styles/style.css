@@ -24,13 +24,9 @@ p {
 }
 
 main {
-  display: none;
-}
-
-main.active {
+  display: flex;
   width: 100vw;
   height: 100vh;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -133,7 +129,7 @@ form button:hover {
 }
 
 .card {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: flex-start;
 
@@ -146,12 +142,16 @@ form button:hover {
   border-radius: 15px;
 }
 
-#thank-page .card {
+.card.active {
+  display: flex;
+}
+
+#thank.card {
   align-items: center;
   text-align: center;
 }
 
-#thank-page img {
+#thank img {
   margin-bottom: 2rem;
 }
 
