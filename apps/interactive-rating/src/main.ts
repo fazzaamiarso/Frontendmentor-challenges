@@ -18,6 +18,7 @@ form.addEventListener("submit", (e) => {
   mainPage.classList.remove("active");
   thankPage.classList.add("active");
 
+  thankPage.querySelector("h1")?.focus();
   ratingStatus.innerText = `You selected ${selectedRatingEl.innerText} out of 5`;
 });
 
