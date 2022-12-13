@@ -1,0 +1,2 @@
+# Interactive Rating Component
+Solution for [https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI](https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI)
