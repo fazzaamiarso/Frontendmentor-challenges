@@ -41,7 +41,7 @@ fieldset {
   width: 100%;
 }
 
-.card__container {
+.cards {
   background-image: url("../images/bg-main-mobile.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -49,30 +49,37 @@ fieldset {
   min-height: 15rem;
 }
 
-.card__container--inner {
+.cards__inner {
   width: 100%;
   position: relative;
   padding-block: 2rem;
   max-width: 400px;
 }
 
-.card__container img {
+.card {
+  position: absolute; 
+}
+
+.card__inner {
+  position: relative;
+}
+
+.card__img {
   width: 100%;
   max-width: 300px;
 }
 
-.front__container {
-  position: absolute;
+.back__card {
+  right: 0;
+}
+
+.front__card {
   left: 0;
   z-index: 10;
   transform: translateY(5.5rem);
 }
 
-.front__container--inner {
-  position: relative;
-}
-
-.front__container--detail{
+.front__detail {
   width: 100%;
   padding: 1rem;
   color: white;
@@ -80,61 +87,29 @@ fieldset {
   bottom: 0;
 }
 
-.front__container p{
+.front__cc-number {
   font-size: 1.35rem;
   font-weight: 500;
 }
 
-.front__container .meta{
+.front__meta {
   width: 100%;
   display: flex;
   justify-content: space-between
 }
 
-.back__container {
-  position: absolute;
-  right: 0;
-}
-
-.back__container--inner {
-  position: relative;
-}
-
-.back__container #display-cvc {
+.back__cvc {
   position: absolute;
   color: white;
   right: 2.5rem;
   top: 4.3rem;
 }
 
-form {
+.detail-form {
   padding-block: 4rem;
 }
 
-form button {
-  border-radius: var(--border-radius);
-  border: none;
-  background-color: var(--very-gray-violet);
-  color: white;
-
-  width: 100%;
-  font-size: var(--font-size);
-  font-weight: 500;
-  padding-block: .75rem;
-}
-
-form button:focus-visible {
-  outline-offset: .25rem;
-}
-
-.input-group {
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.input__container {
+.detail-form__input-container {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -142,46 +117,77 @@ form button:focus-visible {
   margin-bottom: 1.5rem;
 }
 
-.input__container input {
-  --border-length: 2px;
-  outline: none;
+.detail-form__group {
   width: 100%;
-  font-size: var(--font-size);
-  font-weight: 500;
-  padding: .8rem;
-  
-  border: var(--light-gray-violet) var(--border-length) solid;
-  border-radius: var(--border-radius);
- 
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
-.input__container input:focus-visible {
-  border: solid var(--border-length) transparent;
+.detail-form__label {
+  text-transform: uppercase;
+  
+  letter-spacing: .1ch;
+  font-size: .9rem;
+  font-weight: 500;
+
+  margin-bottom: .4rem;
+}
+
+.detail-form__input {
+  --input-border-size: 2px;
+  outline: none;
+
+  width: 100%;
+  padding: .8rem;
+
+  font-size: var(--font-size);
+  font-weight: 500;
+  
+  border: var(--light-gray-violet) var(--input-border-size) solid;
+  border-radius: var(--border-radius);
+}
+
+.detail-form__input:focus-visible,
+.detail-form__input:invalid:focus-visible {
+  border: solid var(--input-border-size) transparent;
   background-image: linear-gradient(white, white),
    linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
   background-origin: border-box;
   background-clip: padding-box, border-box;
 }
 
-.input__container input.error {
-  border: solid var(--border-length) var(--error-red);
-}
-
-.input__container input.error ~ p {
-  color: var(--error-red);
-  font-size: .85rem;
-}
-
-.input__container input::placeholder {
+.detail-form__input::placeholder {
   font-weight: 500;
   color: var(--dark-gray-violet);
 }
 
-.input__container--label{
-  font-size: .9rem;
-  text-transform: uppercase;
-  letter-spacing: .1ch;
-  font-weight: 500;
+.detail-form__input--invalid {
+  border: solid var(--input-border-size) var(--error-red);
+}
 
-  margin-bottom: .4rem;
+.detail-form__error-hint {
+  color: var(--error-red);
+  font-size: .85rem;
+}
+
+.button {
+  border: none;
+  width: 100%;
+
+  font-weight: 500;
+  font-size: var(--font-size);
+}
+
+.button:focus-visible {
+  outline-offset: .25rem;
+
+}
+
+.button--default {
+  border-radius: var(--border-radius);
+  padding-block: .75rem;
+
+  background-color: var(--very-gray-violet);
+  color: white;
 }

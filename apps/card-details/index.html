@@ -11,58 +11,81 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <title>Frontend Mentor | Interactive Card Details Form</title>
+    <title>Interactive Card Details Form</title>
   </head>
   <body>
     <main>
-      <div class="card__container">
-        <div class="layout card__container--inner">
-          <div class="back__container">
-            <div class="back__container--inner">
-              <div id="display-cvc">000</div>
-              <img src="./src/images/bg-card-back.png" alt="" class="back" />
+      <div class="cards">
+        <div class="cards__inner layout">
+          <div class="card back__card">
+            <div class="card__inner">
+              <div id="display-cvc" class="back__cvc">000</div>
+              <img
+                src="./src/images/bg-card-back.png"
+                alt=""
+                class="card__img"
+              />
             </div>
           </div>
-          <div class="front__container">
-            <div class="front__container--inner">
-              <div class="front__container--detail">
-                <p id="display-cc-number">0000 0000 0000 0000</p>
-                <div class="meta">
+          <div class="card front__card">
+            <div class="card__inner">
+              <div class="front__detail">
+                <p id="display-cc-number" class="front__cc-number">
+                  0000 0000 0000 0000
+                </p>
+                <div class="front__meta">
                   <span id="display-cc-name">Jane Appleseed</span>
                   <span id="display-expiry">00/00</span>
                 </div>
               </div>
-              <img src="./src/images/bg-card-front.png" alt="" class="front" />
+              <img
+                src="./src/images/bg-card-front.png"
+                alt=""
+                class="card__img"
+              />
             </div>
           </div>
         </div>
       </div>
       <div class="layout">
-        <form novalidate>
+        <div style="display: none">
+          <img src="./src/images/icon-complete.svg" alt="" />
+          <h1>Thank You!</h1>
+          <p>We've added your card details</p>
+        </div>
+
+        <form novalidate class="detail-form">
           <fieldset>
             <legend class="sr-only">
               <h1>Card Details</h1>
             </legend>
-            <div class="input__container">
-              <label for="cc-name" class="input__container--label"
+            <div class="detail-form__input-container">
+              <label for="cc-name" class="detail-form__label"
                 >Cardholder Name</label
               >
               <input
+                class="detail-form__input"
                 type="text"
                 autocomplete="cc-name"
                 id="cc-name"
                 name="cc-name"
                 placeholder="e.g. Jane Appleseed"
                 required
-                aria-errormessage="cc-name-err"
+                aria-describedby="cc-name-err"
               />
-              <p aria-live="polite" role="status" id="cc-name-err"></p>
+              <p
+                aria-live="assertive"
+                role="status"
+                id="cc-name-err"
+                class="detail-form__error-hint"
+              ></p>
             </div>
-            <div class="input__container">
-              <label for="cc-number" class="input__container--label"
+            <div class="detail-form__input-container">
+              <label for="cc-number" class="detail-form__label"
                 >Card Number</label
               >
               <input
+                class="detail-form__input"
                 type="text"
                 pattern="[0-9]*"
                 inputmode="numeric"
@@ -73,19 +96,23 @@
                 minlength="16"
                 placeholder="e.g. 1234 5678 9123"
                 required
-                aria-errormessage="cc-number-err"
+                aria-describedby="cc-number-err"
               />
-              <p aria-live="polite" role="status" id="cc-number-err"></p>
+              <p
+                aria-live="assertive"
+                role="status"
+                id="cc-number-err"
+                class="detail-form__error-hint"
+              ></p>
             </div>
-            <div class="input-group">
-              <fieldset class="input__container">
-                <legend class="input__container--label">
-                  Exp. Date (MM/YY)
-                </legend>
-                <div class="input-group">
-                  <div class="input__container">
+            <div class="detail-form__group">
+              <fieldset class="detail-form__input-container">
+                <legend class="detail-form__label">Exp. Date (MM/YY)</legend>
+                <div class="detail-form__group">
+                  <div class="detail-form__input-container">
                     <label for="expiry-month" class="sr-only">Month (MM)</label>
                     <input
+                      class="detail-form__input"
                       type="text"
                       pattern="[0-9]{2}"
                       inputmode="numeric"
@@ -95,16 +122,19 @@
                       placeholder="MM"
                       maxlength="2"
                       required
+                      aria-describedby="expiry-month-err"
                     />
                     <p
-                      aria-live="polite"
+                      aria-live="assertive"
                       role="status"
                       id="expiry-month-err"
+                      class="detail-form__error-hint"
                     ></p>
                   </div>
-                  <div class="input__container">
+                  <div class="detail-form__input-container">
                     <label for="expiry-year" class="sr-only">Year (YY)</label>
                     <input
+                      class="detail-form__input"
                       type="text"
                       pattern="[0-9]{2}"
                       inputmode="numeric"
@@ -114,18 +144,21 @@
                       placeholder="YY"
                       maxlength="2"
                       required
+                      aria-describedby="expiry-year-err"
                     />
                     <p
-                      aria-live="polite"
+                      aria-live="assertive"
                       role="status"
                       id="expiry-year-err"
+                      class="detail-form__error-hint"
                     ></p>
                   </div>
                 </div>
               </fieldset>
-              <div class="input__container">
-                <label for="cvc" class="input__container--label">CVC</label>
+              <div class="detail-form__input-container">
+                <label for="cvc" class="detail-form__label">CVC</label>
                 <input
+                  class="detail-form__input"
                   type="text"
                   pattern="[0-9]*"
                   inputmode="numeric"
@@ -136,12 +169,18 @@
                   maxlength="3"
                   minlength="3"
                   required
+                  aria-describedby="cvc-err"
                 />
-                <p aria-live="polite" role="status" id="cvc-err"></p>
+                <p
+                  aria-live="assertive"
+                  role="status"
+                  id="cvc-err"
+                  class="detail-form__error-hint"
+                ></p>
               </div>
             </div>
           </fieldset>
-          <button>Confirm</button>
+          <button class="button button--default">Confirm</button>
         </form>
       </div>
     </main>
