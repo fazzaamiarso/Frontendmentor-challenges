@@ -54,23 +54,26 @@
             </div>
           </div>
         </div>
-        <div id="thank-card" style="display: none" class="container success__container layout">
-          <img src="./src/images/icon-complete.svg" alt="" class="success__img" />
+        <div
+          id="thank-card"
+          style="display: none"
+          class="container success__container layout"
+        >
+          <img
+            src="./src/images/icon-complete.svg"
+            alt=""
+            class="success__img"
+          />
           <div class="success__content">
-            <h1>Thank You!</h1>
+            <h1 tabindex="-1">Thank You!</h1>
             <p class="success__text">We've added your card details</p>
             <button class="button button--default">Continue</button>
           </div>
         </div>
-        <form
-          id="detail-card"
-          novalidate
-          class="container detail-form layout"
-        >
+        <form id="detail-card" novalidate class="container detail-form layout">
+          <h1 class="sr-only">Card details Page</h1>
           <fieldset>
-            <legend class="sr-only">
-              <h1>Card Details</h1>
-            </legend>
+            <legend class="sr-only">Card Details</legend>
             <div class="detail-form__input-container">
               <label for="cc-name" class="detail-form__label"
                 >Cardholder Name</label
@@ -88,6 +91,7 @@
               />
               <p
                 aria-live="assertive"
+                aria-relevant="additions removals"
                 role="status"
                 id="cc-name-err"
                 class="detail-form__error-hint"
@@ -113,6 +117,7 @@
               />
               <p
                 aria-live="assertive"
+                aria-relevant="additions removals"
                 role="status"
                 id="cc-number-err"
                 class="detail-form__error-hint"
@@ -120,10 +125,15 @@
             </div>
             <div class="detail-form__group">
               <fieldset class="detail-form__input-container">
-                <legend class="detail-form__label">Exp. Date (MM/YY)</legend>
+                <legend class="detail-form__label">
+                  <span  class="sr-only">expiry date</span>
+                  <span aria-hidden="true">Exp. Date (MM/YY)</span>
+                </legend>
                 <div class="detail-form__group">
                   <div class="">
-                    <label for="expiry-month" class="sr-only">Month (MM)</label>
+                    <label for="expiry-month" class="sr-only"
+                      >Expiry Month</label
+                    >
                     <input
                       class="detail-form__input"
                       type="text"
@@ -140,7 +150,7 @@
                     />
                   </div>
                   <div class="">
-                    <label for="expiry-year" class="sr-only">Year (YY)</label>
+                    <label for="expiry-year" class="sr-only">Expiry Year</label>
                     <input
                       class="detail-form__input"
                       type="text"
@@ -159,12 +169,14 @@
                 </div>
                 <p
                   aria-live="assertive"
+                  aria-relevant="additions removals"
                   role="status"
                   id="expiry-month-err"
                   class="detail-form__error-hint"
                 ></p>
                 <p
                   aria-live="assertive"
+                  aria-relevant="additions removals"
                   role="status"
                   id="expiry-year-err"
                   class="detail-form__error-hint"
@@ -188,6 +200,7 @@
                 />
                 <p
                   aria-live="assertive"
+                  aria-relevant="additions removals"
                   role="status"
                   id="cvc-err"
                   class="detail-form__error-hint"

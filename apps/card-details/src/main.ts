@@ -158,7 +158,7 @@ form.addEventListener("submit", (e) => {
     return;
   }
 
-  thankCard.style.display = "block";
+  thankCard.style.display = "flex";
   detailCard.style.display = "none";
 
   thankCard.querySelector("h1")?.focus();
