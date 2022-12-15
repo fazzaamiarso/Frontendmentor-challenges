@@ -9,6 +9,8 @@ const appendText = (el: HTMLElement, text: string) => {
   el.appendChild(document.createTextNode(text));
 };
 
+const thankCard = getElement("#thank-card");
+const detailCard = getElement("#detail-card");
 const form = getElement<HTMLFormElement>("form");
 
 const displayCCNumber = getElement("#display-cc-number");
@@ -153,7 +155,13 @@ form.addEventListener("submit", (e) => {
   if (!form.checkValidity()) {
     // focus on first found errored field
     getElement<HTMLInputElement>("input[aria-invalid='true']").focus();
+    return;
   }
+
+  thankCard.style.display = "block";
+  detailCard.style.display = "none";
+
+  thankCard.querySelector("h1")?.focus();
 });
 
 form.addEventListener("input", (e) => {

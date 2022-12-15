@@ -70,6 +70,14 @@ fieldset {
   transform: translate(var(--x-spacing), 0);
 }
 
+.card__inner {
+  position: relative;
+  width: 100%;
+
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
 .card__img {
   width: 100%;
   width: 260px;
@@ -112,11 +120,6 @@ fieldset {
   font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
-}
-
-.card__inner {
-  position: relative;
-  width: 100%;
 }
 
 .front__meta {
@@ -163,10 +166,36 @@ fieldset {
   }
 }
 
-.detail-form {
+.container {
   max-width: 400px;
-  padding-block: 4rem;
+  padding-block: 5rem;
   margin-inline: auto;
+}
+
+.success__container { 
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+  font-size: var(--font-size);
+}
+
+.success__img {
+  align-self: center;
+  margin-bottom: 1.5rem;
+}
+
+.success__content > * {
+  margin-bottom: 1rem;
+}
+
+.success__content > *:last-child {
+  margin-top: 2rem;
+}
+
+.success__text {
+  color: var(--dark-gray-violet);
+  font-weight: 500;
 }
 
 .detail-form__input-container {
@@ -185,8 +214,9 @@ fieldset {
 }
 
 .detail-form__label {
-  text-transform: uppercase;
+  color: var(--very-gray-violet);
 
+  text-transform: uppercase;
   letter-spacing: 0.1ch;
   font-size: 0.9rem;
   font-weight: 500;
@@ -203,6 +233,7 @@ fieldset {
   padding-inline: 1rem;
   margin-bottom: 0.25rem;
 
+  color: var(--very-gray-violet);
   font-weight: 500;
 
   border: var(--light-gray-violet) var(--input-border-size) solid;
@@ -238,6 +269,13 @@ fieldset {
 
   font-weight: 500;
   font-size: var(--font-size);
+
+  cursor: pointer;
+  transition: all 200ms ease-in;
+} 
+
+.button:hover {
+  opacity: .9;
 }
 
 .button:focus-visible {
@@ -276,7 +314,7 @@ fieldset {
     transform: translate(30%, var(--y-spacing));
   }
 
-  .detail-form {
+  .container {
     place-self: center;
     grid-column: 3 / 7;
   }

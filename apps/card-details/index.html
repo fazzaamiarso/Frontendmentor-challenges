@@ -16,7 +16,7 @@
   <body>
     <main class="">
       <div class="page">
-        <div class="cards">
+        <div class="cards" aria-hidden="true">
           <div class="back__card">
             <div class="card__inner">
               <div id="display-cvc" class="back__cvc">000</div>
@@ -38,8 +38,12 @@
                   0000 0000 0000 0000
                 </p>
                 <div class="front__meta">
-                  <span id="display-cc-name" class="front__meta-text">Jane Appleseed</span>
-                  <span id="display-expiry" class="front__meta-text">00/00</span>
+                  <span id="display-cc-name" class="front__meta-text"
+                    >Jane Appleseed</span
+                  >
+                  <span id="display-expiry" class="front__meta-text"
+                    >00/00</span
+                  >
                 </div>
               </div>
               <img
@@ -50,12 +54,19 @@
             </div>
           </div>
         </div>
-        <div style="display: none">
-          <img src="./src/images/icon-complete.svg" alt="" />
-          <h1>Thank You!</h1>
-          <p>We've added your card details</p>
+        <div id="thank-card" style="display: none" class="container success__container layout">
+          <img src="./src/images/icon-complete.svg" alt="" class="success__img" />
+          <div class="success__content">
+            <h1>Thank You!</h1>
+            <p class="success__text">We've added your card details</p>
+            <button class="button button--default">Continue</button>
+          </div>
         </div>
-        <form novalidate class="detail-form layout">
+        <form
+          id="detail-card"
+          novalidate
+          class="container detail-form layout"
+        >
           <fieldset>
             <legend class="sr-only">
               <h1>Card Details</h1>
@@ -72,6 +83,7 @@
                 name="cc-name"
                 placeholder="e.g. Jane Appleseed"
                 required
+                maxlength="25"
                 aria-describedby="cc-name-err"
               />
               <p
@@ -110,7 +122,7 @@
               <fieldset class="detail-form__input-container">
                 <legend class="detail-form__label">Exp. Date (MM/YY)</legend>
                 <div class="detail-form__group">
-                  <div class="detail-form__input-container">
+                  <div class="">
                     <label for="expiry-month" class="sr-only">Month (MM)</label>
                     <input
                       class="detail-form__input"
@@ -126,14 +138,8 @@
                       required
                       aria-describedby="expiry-month-err"
                     />
-                    <p
-                      aria-live="assertive"
-                      role="status"
-                      id="expiry-month-err"
-                      class="detail-form__error-hint"
-                    ></p>
                   </div>
-                  <div class="detail-form__input-container">
+                  <div class="">
                     <label for="expiry-year" class="sr-only">Year (YY)</label>
                     <input
                       class="detail-form__input"
@@ -149,14 +155,20 @@
                       required
                       aria-describedby="expiry-year-err"
                     />
-                    <p
-                      aria-live="assertive"
-                      role="status"
-                      id="expiry-year-err"
-                      class="detail-form__error-hint"
-                    ></p>
                   </div>
                 </div>
+                <p
+                  aria-live="assertive"
+                  role="status"
+                  id="expiry-month-err"
+                  class="detail-form__error-hint"
+                ></p>
+                <p
+                  aria-live="assertive"
+                  role="status"
+                  id="expiry-year-err"
+                  class="detail-form__error-hint"
+                ></p>
               </fieldset>
               <div class="detail-form__input-container">
                 <label for="cvc" class="detail-form__label">CVC</label>
