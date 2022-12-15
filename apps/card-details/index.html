@@ -14,47 +14,54 @@
     <title>Interactive Card Details Form</title>
   </head>
   <body>
-    <main>
-      <div class="cards">
-        <div class="cards__inner layout">
-          <div class="card back__card">
-            <div class="card__inner">
-              <div id="display-cvc" class="back__cvc">000</div>
-              <img
-                src="./src/images/bg-card-back.png"
-                alt=""
-                class="card__img"
-              />
-            </div>
+    <main class="">
+      <div class="page">
+        <div class="cards">
+          <div class="back__card"><img src="./src/images/bg-card-back.png" alt="" class="card__img" /></div>
+          <div class="front__card">
+            <img
+              src="./src/images/bg-card-front.png"
+              alt=""
+              class="card__img"
+            />
           </div>
-          <div class="card front__card">
-            <div class="card__inner">
-              <div class="front__detail">
-                <p id="display-cc-number" class="front__cc-number">
-                  0000 0000 0000 0000
-                </p>
-                <div class="front__meta">
-                  <span id="display-cc-name">Jane Appleseed</span>
-                  <span id="display-expiry">00/00</span>
-                </div>
+          <!-- <div class="cards__inner layout">
+            <div class="card back__card">
+              <div class="card__inner">
+                <div id="display-cvc" class="back__cvc">000</div>
+                <img
+                  src="./src/images/bg-card-back.png"
+                  alt=""
+                  class="card__img"
+                />
               </div>
-              <img
-                src="./src/images/bg-card-front.png"
-                alt=""
-                class="card__img"
-              />
             </div>
-          </div>
+            <div class="card front__card">
+              <div class="card__inner">
+                <div class="front__detail">
+                  <p id="display-cc-number" class="front__cc-number">
+                    0000 0000 0000 0000
+                  </p>
+                  <div class="front__meta">
+                    <span id="display-cc-name">Jane Appleseed</span>
+                    <span id="display-expiry">00/00</span>
+                  </div>
+                </div>
+                <img
+                  src="./src/images/bg-card-front.png"
+                  alt=""
+                  class="card__img"
+                />
+              </div>
+            </div>
+          </div> -->
         </div>
-      </div>
-      <div class="layout">
         <div style="display: none">
           <img src="./src/images/icon-complete.svg" alt="" />
           <h1>Thank You!</h1>
           <p>We've added your card details</p>
         </div>
-
-        <form novalidate class="detail-form">
+        <form novalidate class="detail-form layout">
           <fieldset>
             <legend class="sr-only">
               <h1>Card Details</h1>
@@ -114,13 +121,14 @@
                     <input
                       class="detail-form__input"
                       type="text"
-                      pattern="[0-9]{2}"
+                      pattern="[0-9]*"
                       inputmode="numeric"
                       autocomplete="cc-exp-month"
                       id="expiry-month"
                       name="expiry-month"
                       placeholder="MM"
                       maxlength="2"
+                      minlength="2"
                       required
                       aria-describedby="expiry-month-err"
                     />
@@ -136,13 +144,14 @@
                     <input
                       class="detail-form__input"
                       type="text"
-                      pattern="[0-9]{2}"
+                      pattern="[0-9]*"
                       inputmode="numeric"
                       autocomplete="cc-exp-year"
                       id="expiry-year"
                       name="expiry-year"
                       placeholder="YY"
                       maxlength="2"
+                      minlength="2"
                       required
                       aria-describedby="expiry-year-err"
                     />
