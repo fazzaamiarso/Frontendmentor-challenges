@@ -61,7 +61,7 @@ fieldset {
   justify-content: center;
 }
 
-.front__card{
+.front__card {
   position: absolute;
   transform: translate(calc(var(--x-spacing) * -1), 55%);
 }
@@ -75,6 +75,31 @@ fieldset {
   width: 260px;
 }
 
+.front__decor {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.front__circle {
+  --radius: 50px;
+  width: var(--radius);
+  height: var(--radius);
+  border-radius: 10000px;
+}
+
+.front__circle--fill {
+  --radius: 30px;
+  background: white;
+}
+
+.front__circle--outline {
+  --radius: 10px;
+  outline: white 1px solid;
+}
+
 .front__detail {
   width: 100%;
   padding: 1rem;
@@ -84,8 +109,14 @@ fieldset {
 }
 
 .front__cc-number {
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.card__inner {
+  position: relative;
+  width: 100%;
 }
 
 .front__meta {
@@ -94,11 +125,42 @@ fieldset {
   justify-content: space-between;
 }
 
+.front__meta-text {
+  font-size: 0.7rem;
+}
+
 .back__cvc {
   position: absolute;
   color: white;
-  right: 2.5rem;
-  top: 4.3rem;
+  top: 40%;
+  right: 13%;
+}
+
+@media screen and (min-width: 1024px) {
+  .front__circle--fill {
+    --radius: 50px;
+  }
+
+  .front__circle--outline {
+    --radius: 20px;
+  }
+
+  .front__detail {
+    padding: 1.25rem;
+  }
+
+  .front__cc-number {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .front__meta-text {
+    font-size: 1rem;
+  }
+
+  .back__cvc {
+    top: 44%;
+  }
 }
 
 .detail-form {
@@ -207,11 +269,11 @@ fieldset {
   }
 
   .front__card {
-    transform: translate(10% , calc(var(--y-spacing) * -1));
+    transform: translate(10%, calc(var(--y-spacing) * -1));
   }
 
   .back__card {
-    transform: translate(30% , var(--y-spacing));
+    transform: translate(30%, var(--y-spacing));
   }
 
   .detail-form {
@@ -222,10 +284,10 @@ fieldset {
 
 @media screen and (min-width: 1200px) {
   .front__card {
-    transform: translate(30% , calc(var(--y-spacing) * -1));
+    transform: translate(30%, calc(var(--y-spacing) * -1));
   }
 
   .back__card {
-    transform: translate(50% , var(--y-spacing));
+    transform: translate(50%, var(--y-spacing));
   }
 }

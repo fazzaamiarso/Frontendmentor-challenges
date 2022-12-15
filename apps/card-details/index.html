@@ -17,44 +17,38 @@
     <main class="">
       <div class="page">
         <div class="cards">
-          <div class="back__card"><img src="./src/images/bg-card-back.png" alt="" class="card__img" /></div>
-          <div class="front__card">
-            <img
-              src="./src/images/bg-card-front.png"
-              alt=""
-              class="card__img"
-            />
+          <div class="back__card">
+            <div class="card__inner">
+              <div id="display-cvc" class="back__cvc">000</div>
+              <img
+                src="./src/images/bg-card-back.png"
+                alt=""
+                class="card__img"
+              />
+            </div>
           </div>
-          <!-- <div class="cards__inner layout">
-            <div class="card back__card">
-              <div class="card__inner">
-                <div id="display-cvc" class="back__cvc">000</div>
-                <img
-                  src="./src/images/bg-card-back.png"
-                  alt=""
-                  class="card__img"
-                />
+          <div class="front__card">
+            <div class="card__inner">
+              <div class="front__decor">
+                <div class="front__circle front__circle--fill"></div>
+                <div class="front__circle front__circle--outline"></div>
               </div>
-            </div>
-            <div class="card front__card">
-              <div class="card__inner">
-                <div class="front__detail">
-                  <p id="display-cc-number" class="front__cc-number">
-                    0000 0000 0000 0000
-                  </p>
-                  <div class="front__meta">
-                    <span id="display-cc-name">Jane Appleseed</span>
-                    <span id="display-expiry">00/00</span>
-                  </div>
+              <div class="front__detail">
+                <p id="display-cc-number" class="front__cc-number">
+                  0000 0000 0000 0000
+                </p>
+                <div class="front__meta">
+                  <span id="display-cc-name" class="front__meta-text">Jane Appleseed</span>
+                  <span id="display-expiry" class="front__meta-text">00/00</span>
                 </div>
-                <img
-                  src="./src/images/bg-card-front.png"
-                  alt=""
-                  class="card__img"
-                />
               </div>
+              <img
+                src="./src/images/bg-card-front.png"
+                alt=""
+                class="card__img"
+              />
             </div>
-          </div> -->
+          </div>
         </div>
         <div style="display: none">
           <img src="./src/images/icon-complete.svg" alt="" />
