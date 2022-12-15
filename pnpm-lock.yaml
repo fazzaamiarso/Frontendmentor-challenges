@@ -15,8 +15,11 @@ importers:
   apps/card-details:
     specifiers:
       eslint-config-custom: workspace:*
+      gsap: ^3.11.3
       typescript: ^4.9.3
       vite: ^4.0.0
+    dependencies:
+      gsap: 3.11.3
     devDependencies:
       eslint-config-custom: link:../../packages/eslint-config-custom
       typescript: 4.9.3
@@ -1412,6 +1415,10 @@ packages:
 
   /grapheme-splitter/1.0.4:
     resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==}
+
+  /gsap/3.11.3:
+    resolution: {integrity: sha512-xc/iIJy+LWiMbRa4IdMtdnnKa/7PXEK6NNzV71gdOYUVeTZN7UWnLU0fB7Hi1iwiz4ZZoYkBZPPYGg+2+zzFHA==}
+    dev: false
 
   /has-bigints/1.0.2:
     resolution: {integrity: sha512-tSvCKtBr9lkF0Ex0aQiP9N+OpV4zi2r/Nee5VkRDbaqv35RLYMzbwQfFSZZH0kR+Rd6302UJZ2p/bJCEoR3VoQ==}

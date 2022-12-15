@@ -1,3 +1,5 @@
+import "./animate.ts";
+
 const getElement = <T extends HTMLElement>(selector: string): T => {
   const el = document.querySelector(selector);
   // eslint-disable-next-line no-console
