@@ -1,29 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <link rel="stylesheet" href="./src/styles/normalize.css" />
-  <link rel="stylesheet" href="./src/styles/index.scss" />
-  <title>Frontend Mentor | Interactive pricing component</title>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles/normalize.css" />
+    <link rel="stylesheet" href="./src/styles/index.scss" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Interactive pricing component</title>
+  </head>
+  <body>
+    <main class="main">
+      <header class="header">
+        <h1 class="header__title">Simple, traffic-based pricing</h1>
+        <p class="header__subtext">Sign-up for our 30-day trial. No credit card required.</p>
+      </header>
+      <div class="card">
+        <form id="pricing-form" class="card__form">
+          <div>Pageviews</div>
+          <input type="range" />
+          <div>$ /month</div>
 
-  <h1>
-    Simple, traffic-based pricing
-    Sign-up for our 30-day trial. No credit card required.
-  </h1>
+          <fieldset class="radio-switch">
+            <legend class="sr-only">
+                Billing Frequency
+            </legend>
+              <label for="monthly-radio" class="radio-switch__label radio-switch__label--left">Monthly Billing</label>
+              <span class="radio-switch__toggle">
+                <input type="radio" id="monthly-radio" name="frequency" class="radio-switch__input radio-switch__input--left">
+                <input type="radio" id="yearly-radio" name="frequency" class="radio-switch__input radio-switch__input--right">
+                <span class="radio-switch__toggle-switcher" aria-hidden="true"></span>
+                <span class="radio-switch__toggle-background" aria-hidden="true"></span>
+              </span>
+              <label for="yearly-radio" class="radio-switch__label radio-switch__label--right">Yearly Billing  <span class="radio-switch__discount">-25%</span> </label>
+          </fieldset>
+        </form>
+        <div class="card__divider"></div>
+        <div class="card__features">
+          <ul class="card__list">
+            <li class="card__list-item">
+              <img src="./images/icon-check.svg" alt="" /> Unlimited websites
+            </li>
+            <li class="card__list-item">
+              <img src="./images/icon-check.svg" alt="" /> 100% data ownership
+            </li>
+            <li class="card__list-item">
+              <img src="./images/icon-check.svg" alt="" /> Email reports
+            </li>
+          </ul>
+          <button form="pricing-form" class="card__button">
+            Start my trial
+          </button>
+        </div>
+      </div>
+    </main>
 
-  Pageviews
-  $ /month
-
-  Monthly Billing
-  Yearly Billing 25% discount
-
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  <button>Start my trial</button>
-<script type="module" src="./src/main.ts"></script>
-</body>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
 </html>
