@@ -23,19 +23,23 @@
       </header>
       <div class="card">
         <form id="pricing-form" class="card__form">
-          <div class="card__views"><span id="pageviews"></span> Pageviews</div>
-          <input
-            type="range"
-            name="pricing-slider"
-            id="pricing-slider"
-            max="5"
-            min="1"
-            step="1"
-            class="slider"
-          />
-          <label for="pricing-slider" class="sr-only">Price Range</label>
-          <div class="card__pricing">
-            <span id="price" class="card__dollar"></span> / month
+          <div class="card__form-top">
+            <div class="card__views"><span id="pageviews" role="presentation"></span> Pageviews</div>
+            <div class="slider__container">
+              <input
+                type="range"
+                name="pricing-slider"
+                id="pricing-slider"
+                max="5"
+                min="1"
+                step="1"
+                class="slider"
+              />
+              <label for="pricing-slider" class="sr-only">Price Range</label>
+            </div>
+            <div class="card__pricing">
+              <span id="price" class="card__dollar" role="presentation"></span>&#47; month</span>
+            </div>
           </div>
 
           <fieldset class="radio-switch">
@@ -73,8 +77,8 @@
             <label
               for="yearly-radio"
               class="radio-switch__label radio-switch__label--right"
-              >Yearly Billing
-              <span class="radio-switch__discount"
+              >Yearly Billing <span class="sr-only">with 25% discount</span>
+              <span class="radio-switch__discount" aria-hidden="true"
                 >-25% <span class="radio-switch__discount-extra">discount</span></span
             ></label>
           </fieldset>
