@@ -17,26 +17,66 @@
     <main class="main">
       <header class="header">
         <h1 class="header__title">Simple, traffic-based pricing</h1>
-        <p class="header__subtext">Sign-up for our 30-day trial. No credit card required.</p>
+        <p class="header__subtext">
+          Sign-up for our 30-day trial. No credit card required.
+        </p>
       </header>
       <div class="card">
         <form id="pricing-form" class="card__form">
-          <div>Pageviews</div>
-          <input type="range" />
-          <div>$ /month</div>
+          <div class="card__views"><span id="pageviews"></span> Pageviews</div>
+          <input
+            type="range"
+            name="pricing-slider"
+            id="pricing-slider"
+            max="5"
+            min="1"
+            step="1"
+            class="slider"
+          />
+          <label for="pricing-slider" class="sr-only">Price Range</label>
+          <div class="card__pricing">
+            <span id="price" class="card__dollar"></span> / month
+          </div>
 
           <fieldset class="radio-switch">
-            <legend class="sr-only">
-                Billing Frequency
-            </legend>
-              <label for="monthly-radio" class="radio-switch__label radio-switch__label--left">Monthly Billing</label>
-              <span class="radio-switch__toggle">
-                <input type="radio" id="monthly-radio" name="frequency" class="radio-switch__input radio-switch__input--left">
-                <input type="radio" id="yearly-radio" name="frequency" class="radio-switch__input radio-switch__input--right">
-                <span class="radio-switch__toggle-switcher" aria-hidden="true"></span>
-                <span class="radio-switch__toggle-background" aria-hidden="true"></span>
-              </span>
-              <label for="yearly-radio" class="radio-switch__label radio-switch__label--right">Yearly Billing  <span class="radio-switch__discount">-25%</span> </label>
+            <legend class="sr-only">Billing Frequency</legend>
+            <label
+              for="monthly-radio"
+              class="radio-switch__label radio-switch__label--left"
+              >Monthly Billing</label
+            >
+            <span class="radio-switch__toggle">
+              <input
+                type="radio"
+                id="monthly-radio"
+                name="frequency"
+                value="monthly"
+                class="radio-switch__input radio-switch__input--left"
+                checked
+              />
+              <input
+                type="radio"
+                id="yearly-radio"
+                name="frequency"
+                value="yearly"
+                class="radio-switch__input radio-switch__input--right"
+              />
+              <span
+                class="radio-switch__toggle-switcher"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="radio-switch__toggle-background"
+                aria-hidden="true"
+              ></span>
+            </span>
+            <label
+              for="yearly-radio"
+              class="radio-switch__label radio-switch__label--right"
+              >Yearly Billing
+              <span class="radio-switch__discount"
+                >-25% <span class="radio-switch__discount-extra">discount</span></span
+            ></label>
           </fieldset>
         </form>
         <div class="card__divider"></div>
